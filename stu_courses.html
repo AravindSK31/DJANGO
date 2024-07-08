@@ -1,0 +1,35 @@
+<html>
+<body>
+<form method="POST" action="">
+Courses
+{% csrf_token %}
+<select name="cname">
+{%for course in courses %}
+<option value="{{course.id}}">{{course.course_name}}</option>
+{% endfor %}
+</select>
+<input type="submit" value="Search">
+</form>
+</body>
+</html>
+
+
+
+<html>
+<body>
+<table border>
+<tr>
+<th>Student Name</th>
+<th>Student USN</th>
+<th>Sem</th>
+</tr>
+{% for student in student_list %}
+<tr>
+<td>{{student.student_name}}</td>
+<td>{{student.student_usn}}</td>
+<td>{{student.student_sem}}</td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>
